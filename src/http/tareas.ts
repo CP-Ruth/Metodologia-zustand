@@ -11,7 +11,7 @@ export const getAllTareas = async () => {
     }
 }
 
-export const portNuevaTarea = async (nuevaTarea: ITarea) => {
+export const postNuevaTarea = async (nuevaTarea: ITarea) => {
     try {
         const response = await axios.post<ITarea>(API_URL, {
             nuevaTarea

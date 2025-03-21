@@ -10,6 +10,8 @@ export const ListTareas = () => {
     const tareas = tareaStore((state) => state.tareas);
     const setArrayTareas = tareaStore((state) => state.setArrayTareas);
 
+    const setTareaActiva = tareaStore((state) => state.setTareaActiva);
+
     const getTareas = async () => {
         const data = await getAllTareas();
         if (data) setArrayTareas(data);
@@ -21,7 +23,7 @@ export const ListTareas = () => {
 
     const [openModalTarea, setOpenModalTarea] = useState(false);
     const handleOpenModalEdit = (tarea: ITarea) => {
-        console.log("Editar", tarea);
+        setTareaActiva(tarea);
         setOpenModalTarea(true);
     };
 

@@ -1,14 +1,40 @@
-import { FC } from 'react';
+import { ChangeEvent, FC, FormEvent, useEffect, useState } from 'react';
 import { tareaStore } from '../../../store/tareasStore';
 import styles from './Modal.module.css';
+import { ITarea } from '../../../types/ITarea';
 
 type IModal = {
     handleCloseModal: () => void;
 }
 
-export const Modal :FC<IModal> = ({handleCloseModal}) => {
+const initialState: ITarea = {
+    titulo: "",
+    descripcion: "",
+    fechaLimite: ""
+}
+
+export const Modal: FC<IModal> = ({ handleCloseModal }) => {
 
     const tareaActiva = tareaStore((state) => state.tareaActiva);
+
+    const [formValues, setFormValues] = useState<ITarea>(initialState);
+
+    useEffect(() => {
+        if (tareaActiva) setFormValues(tareaActiva);
+    }, []);
+    
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormValues((prev)=>({
+            ...prev,
+            [`${name}`]: value
+        }));
+    }
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault(); // Evita que se recargue la página
+        console.log(formValues);
+    }
 
     return (
         <div className={styles.containerModal}>
@@ -16,11 +42,26 @@ export const Modal :FC<IModal> = ({handleCloseModal}) => {
                 <div>
                     <h3>{tareaActiva ? "Editar Tarea" : "Crear Tarea"}</h3>
                 </div>
-                <form className={styles.form}>
+                <form onSubmit={handleSubmit} className={styles.form}>
                     <div className={styles.containerInput}>
-                        <input placeholder='Ingrese un título' type="text" required autoComplete='off' name='titulo' />
-                        <textarea placeholder="Descripción" name="descripcion" required />
-                        <input type="date" required autoComplete='off' name='fecha' />
+                        <input
+                            placeholder='Ingrese un título'
+                            type="text" required
+                            onChange={handleChange}
+                            value={formValues.titulo}
+                            autoComplete='off'
+                            name='titulo' />
+                        <textarea
+                            placeholder="Descripción"
+                            name="descripcion" required
+                            onChange={handleChange}
+                            value={formValues.descripcion}/>
+                        <input
+                            type="date" required
+                            onChange={handleChange}
+                            autoComplete='off'
+                            name='fecha' 
+                            value={formValues.fechaLimite}/>
                     </div>
                     <div className={styles.containerButtonsActions}>
                         <button onClick={handleCloseModal} className={styles.buttonCancelar} type="button">Cancelar</button>
