@@ -1,0 +1,47 @@
+.cardList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.cardList__info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.cardList__info h3{
+    font-size: 1.5rem;
+    color: #ad4b4b;
+}
+
+.cardList__buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+.cardList__buttons button{
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttonEliminar{
+    background-color: #ff000068;
+}
+
+.buttonEliminar:hover{
+    background-color: #f00303;
+}
+.buttonEditar{
+    background-color: #01a70c88;
+
+}
+
+.buttonEditar:hover{
+    background-color: #00c10d;
+}

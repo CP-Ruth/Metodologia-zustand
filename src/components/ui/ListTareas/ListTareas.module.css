@@ -1,0 +1,42 @@
+.containerPrincipalListTareas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.containerTitleAndButton{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 70%;
+}
+
+.button{
+    background-color: #f1356d5b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #f1356dc5;
+}
+
+.containerList{ 
+    margin-top: 1rem; ;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 70%;
+    padding: 1rem;
+    border-radius: 0.2rem;
+
+    min-height: 60vh;
+    max-height: 66vh;
+    overflow-y: auto;
+    background-color: #f1356d5a;
+}
