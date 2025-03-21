@@ -1,21 +1,34 @@
 {
-    "tareas" :[{
-        "id": 1,
-        "titulo": "Titulo 1",
-        "descripcion": "Descripcion 1",
-        "fechaLimite": "2022-12-31"
+  "tareas": [
+    {
+      "id": "Fri Mar 21 2025",
+      "titulo": "Metodologia 2",
+      "descripcion": "tp 10",
+      "fechaLimite": "2025-03-27"
     },
     {
-        "id": 2,
-        "titulo": "Titulo 2",
-        "descripcion": "Descripcion 2",
-        "fechaLimite": "2022-11-31"
+      "id": "Fri Mar 21 2025",
+      "titulo": "Laboratorio 4",
+      "descripcion": "tp 4",
+      "fechaLimite": "2025-03-28"
     },
     {
-        "id": 3,
-        "titulo": "Titulo 3",
-        "descripcion": "Descripcion 3",
-        "fechaLimite": "2022-10-31"
+      "id": "Fri Mar 21 2025",
+      "titulo": "Legislación",
+      "descripcion": "tp 2",
+      "fechaLimite": "2025-04-01"
+    },
+    {
+      "id": "Fri Mar 21 2025",
+      "titulo": "Legislación ",
+      "descripcion": "tp 2",
+      "fechaLimite": "2025-04-01"
+    },
+    {
+      "id": "Fri Mar 21 2025",
+      "titulo": "Metodologia",
+      "descripcion": "tp 3",
+      "fechaLimite": "2025-03-28"
     }
-]
+  ]
 }
